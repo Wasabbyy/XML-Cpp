@@ -6,19 +6,19 @@
 #include "MealPlan.h"
 
 void Core::displayMainMenu() {
-    std::cout << "Main Menu:\n";
-    std::cout << "1. Browse Recipes by Category (Breakfast, Lunch, Dinner)\n";
-    std::cout << "2. Meal Planning\n";
-    std::cout << "3. Exit\n";
-    std::cout << "Enter your choice: ";
+    std::cout << "\nMain Menu:\n";
+    std::cout << "\n1. Browse Recipes by Category (Breakfast, Lunch, Dinner)\n";
+    std::cout << "\n2. Meal Planning\n";
+    std::cout << "\n3. Exit\n";
+    std::cout << "\nEnter your choice:\n ";
 }
 
 void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
-    std::cout << "Choose a category:\n";
-    std::cout << "1. Breakfast\n";
-    std::cout << "2. Lunch\n";
-    std::cout << "3. Dinner\n";
-    std::cout << "Enter your choice: ";
+    std::cout << "\nChoose a category:\n";
+    std::cout << "\n1. Breakfast\n";
+    std::cout << "\n2. Lunch\n";
+    std::cout << "\n3. Dinner\n";
+    std::cout << "\nEnter your choice:\n";
     int choice;
     std::cin >> choice;
 
@@ -28,7 +28,7 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         case 2: category = "Lunch"; break;
         case 3: category = "Dinner"; break;
         default:
-            std::cout << "Invalid choice!\n";
+            std::cout << "\nInvalid choice!\n";
             return;
     }
 
@@ -38,12 +38,12 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         return;
     }
 
-    std::cout << "Recipes for " << category << ":\n";
+    std::cout << "\nRecipes for " << category << ":\n";
     for (size_t i = 0; i < recipes.size(); ++i) {
         std::cout << i + 1 << ". " << recipes[i] << "\n";
     }
 
-    std::cout << "Enter the number of the recipe to view details: ";
+    std::cout << "\nEnter the number of the recipe to view details:\n ";
     int recipeChoice;
     std::cin >> recipeChoice;
 
@@ -56,28 +56,28 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
 
 void Core::mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook) {
     mealPlan.displayMealPlan();
-    std::cout << "Enter the date to view meals (e.g., 2024-12-02): ";
+    std::cout << "\nEnter the date to view meals (e.g., 2024-12-02):\n";
     std::string date;
     std::cin >> date;
 
     std::vector<std::string> meals = mealPlan.getMealsForDate(date);
     if (meals.empty()) {
-        std::cout << "No meals found for " << date << ".\n";
+        std::cout << "\nNo meals found for " << date << ".\n";
         return;
     }
 
-    std::cout << "Meals for " << date << ":\n";
+    std::cout << "\nMeals for " << date << ":\n";
     for (size_t i = 0; i < meals.size(); ++i) {
         std::cout << i + 1 << ". " << meals[i] << "\n";
     }
 
-    std::cout << "Enter the number of the meal to view details: ";
+    std::cout << "\nEnter the number of the meal to view details:\n ";
     int mealChoice;
     std::cin >> mealChoice;
 
     if (mealChoice > 0 && mealChoice <= meals.size()) {
         recipeBook.displayRecipeDetails(meals[mealChoice - 1]);
     } else {
-        std::cout << "Invalid choice!\n";
+        std::cout << "\nInvalid choice!\n";
     }
 }
