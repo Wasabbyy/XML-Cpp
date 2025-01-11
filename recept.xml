@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="recept.css" type="text/css"?>
+<?xml-model href="recipe.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<RecipeBook xmlns="urn:stupar:recipe.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:stupar:recipe.com recept.xsd">
+    
+    <Recipe>
+        <Title>Spaghetti Carbonara</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>spaghetti</Name>
+                <Quantity unit="g">200</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>egg yolk</Name>
+                <Quantity unit="pcs">4</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>pancetta</Name>
+                <Quantity unit="g">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>parmesan</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>black pepper</Name>
+                <Quantity unit="g">1</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Boil the spaghetti.</Step>
+            <Step>Fry the pancetta in a separate pan.</Step>
+            <Step>Mix egg yolks with parmesan.</Step>
+            <Step>Combine spaghetti, pancetta, and egg mixture.</Step>
+            <Step>Season with black pepper.</Step>
+        </Instructions>
+        <PreparationTime>10</PreparationTime>
+        <CookingTime>15</CookingTime>
+        <ServingSize>2</ServingSize>
+        <Category>Lunch</Category>
+        <Difficulty>Medium</Difficulty>
+        <Nutrition calories="700" fat="35" protein="25" carbs="70"/>
+        <Image>carbonara.jpg</Image>
+    </Recipe>
+    
+    <Recipe>
+        <Title>Vegetable Stir-Fry</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>bell peppers</Name>
+                <Quantity unit="g">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>carrot</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>broccoli</Name>
+                <Quantity unit="g">80</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>soy sauce</Name>
+                <Quantity unit="ml">15</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>olive oil</Name>
+                <Quantity unit="ml">10</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Heat olive oil in a pan.</Step>
+            <Step>Stir-fry the vegetables until slightly tender.</Step>
+            <Step>Add soy sauce.</Step>
+            <Step>Cook for another 2 minutes.</Step>
+        </Instructions>
+        <PreparationTime>10</PreparationTime>
+        <CookingTime>10</CookingTime>
+        <ServingSize>2</ServingSize>
+        <Category>Dinner</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="200" fat="10" protein="5" carbs="20"/>
+        <Image>VegetableStirFry.jpg</Image>
+    </Recipe>
+    
+    <Recipe>
+        <Title>Beef Tacos</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>ground beef</Name>
+                <Quantity unit="g">200</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>taco seasoning</Name>
+                <Quantity unit="g">15</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>lettuce</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>cheddar cheese</Name>
+                <Quantity unit="g">30</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>taco shells</Name>
+                <Quantity unit="pcs">3</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Cook ground beef with taco seasoning.</Step>
+            <Step>Fill taco shells with beef, lettuce, and cheddar cheese.</Step>
+        </Instructions>
+        <PreparationTime>10</PreparationTime>
+        <CookingTime>15</CookingTime>
+        <ServingSize>1</ServingSize>
+        <Category>Lunch</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="500" fat="25" protein="20" carbs="35"/>
+        <Image>BeefTacos.jpg</Image>
+    </Recipe>
+    
+    <Recipe>
+        <Title>Avocado Toast</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>bread slice</Name>
+                <Quantity unit="pcs">2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>avocado</Name>
+                <Quantity unit="pcs">1</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>lemon juice</Name>
+                <Quantity unit="ml">10</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>salt</Name>
+                <Quantity unit="g">1</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>black pepper</Name>
+                <Quantity unit="g">1</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Mash avocado with lemon juice, salt, and pepper.</Step>
+            <Step>Spread the mixture on toasted bread slices.</Step>
+        </Instructions>
+        <PreparationTime>5</PreparationTime>
+        <CookingTime>2</CookingTime>
+        <ServingSize>1</ServingSize>
+        <Category>Dinner</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="300" fat="15" protein="5" carbs="30"/>
+        <Image>avocadotoast.jpg</Image>
+    </Recipe>
+    <Recipe>
+        <Title>Tomato Soup</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>tomatoes</Name>
+                <Quantity unit="g">500</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>onion</Name>
+                <Quantity unit="g">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>garlic</Name>
+                <Quantity unit="cloves">2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>vegetable broth</Name>
+                <Quantity unit="ml">500</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>olive oil</Name>
+                <Quantity unit="ml">10</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>salt</Name>
+                <Quantity unit="g">2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>pepper</Name>
+                <Quantity unit="g">1</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Heat olive oil in a pot.</Step>
+            <Step>Sauté onion and garlic until fragrant.</Step>
+            <Step>Add chopped tomatoes and cook for 10 minutes.</Step>
+            <Step>Pour in vegetable broth and simmer for 20 minutes.</Step>
+            <Step>Blend until smooth and season with salt and pepper.</Step>
+        </Instructions>
+        <PreparationTime>10</PreparationTime>
+        <CookingTime>30</CookingTime>
+        <ServingSize>4</ServingSize>
+        <Category>Dinner</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="150" fat="5" protein="3" carbs="20"/>
+        <Image>tomatosoup.jpg</Image>
+    </Recipe>
+    
+    <Recipe>
+        <Title>Chocolate Cake</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>flour</Name>
+                <Quantity unit="g">250</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>sugar</Name>
+                <Quantity unit="g">200</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>cocoa powder</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>eggs</Name>
+                <Quantity unit="pcs">3</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>butter</Name>
+                <Quantity unit="g">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>milk</Name>
+                <Quantity unit="ml">200</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>baking powder</Name>
+                <Quantity unit="g">10</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Preheat oven to 180°C (350°F).</Step>
+            <Step>Mix dry ingredients in a bowl.</Step>
+            <Step>Whisk eggs, melted butter, and milk in a separate bowl.</Step>
+            <Step>Combine wet and dry ingredients until smooth.</Step>
+            <Step>Pour into a greased baking pan and bake for 30 minutes.</Step>
+        </Instructions>
+        <PreparationTime>15</PreparationTime>
+        <CookingTime>30</CookingTime>
+        <ServingSize>6</ServingSize>
+        <Category>Breakfast</Category>
+        <Difficulty>Medium</Difficulty>
+        <Nutrition calories="400" fat="18" protein="6" carbs="50"/>
+        <Image>chocolatecake.jpg</Image>
+    </Recipe>
+    <Recipe>
+        <Title>Pancakes</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>flour</Name>
+                <Quantity unit="g">150</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>milk</Name>
+                <Quantity unit="ml">250</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>egg</Name>
+                <Quantity unit="pcs">1</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>sugar</Name>
+                <Quantity unit="g">20</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>butter</Name>
+                <Quantity unit="g">20</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>baking powder</Name>
+                <Quantity unit="g">5</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>maple syrup</Name>
+                <Quantity unit="ml">50</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Mix flour, sugar, and baking powder in a bowl.</Step>
+            <Step>Whisk milk, egg, and melted butter in another bowl.</Step>
+            <Step>Combine wet and dry ingredients to form a batter.</Step>
+            <Step>Heat a non-stick pan and pour batter to form pancakes.</Step>
+            <Step>Cook until golden brown on both sides.</Step>
+            <Step>Serve with maple syrup.</Step>
+        </Instructions>
+        <PreparationTime>10</PreparationTime>
+        <CookingTime>10</CookingTime>
+        <ServingSize>2</ServingSize>
+        <Category>Breakfast</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="350" fat="12" protein="8" carbs="50"/>
+        <Image>pancakes.jpg</Image>
+    </Recipe>
+    
+    <Recipe>
+        <Title>Smoothie Bowl</Title>
+        <Ingredients>
+            <Ingredient>
+                <Name>frozen bananas</Name>
+                <Quantity unit="pcs">2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>frozen berries</Name>
+                <Quantity unit="g">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>almond milk</Name>
+                <Quantity unit="ml">100</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>granola</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Name>fresh fruit</Name>
+                <Quantity unit="g">50</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Step>Blend bananas, berries, and almond milk until smooth.</Step>
+            <Step>Pour the mixture into a bowl.</Step>
+            <Step>Top with granola and fresh fruit.</Step>
+        </Instructions>
+        <PreparationTime>5</PreparationTime>
+        <CookingTime>0</CookingTime>
+        <ServingSize>1</ServingSize>
+        <Category>Breakfast</Category>
+        <Difficulty>Easy</Difficulty>
+        <Nutrition calories="250" fat="5" protein="5" carbs="50"/>
+        <Image>smoothiebowl.jpg</Image>
+    </Recipe>
+    
+    
+    <MealPlan>
+        <Day date="2024-12-02">
+            <Meal type="Breakfast">Smoothie Bowl</Meal>
+            <Meal type="Lunch">Spaghetti Carbonara</Meal>
+            <Meal type="Dinner">Vegetable Stir-Fry</Meal>
+        </Day>
+        <Day date="2024-12-03">
+            <Meal type="Breakfast">Chocolate Cake</Meal>
+            <Meal type="Lunch">Beef Tacos</Meal>
+            <Meal type="Dinner">Vegetable Stir-Fry</Meal>
+        </Day>
+        <Day date="2024-12-04">
+            <Meal type="Breakfast">Smoothie Bowl</Meal>
+            <Meal type="Lunch">Beef Tacos</Meal>
+            <Meal type="Dinner">Avocado Toast</Meal>
+        </Day>
+        <Day date="2024-12-05">
+            <Meal type="Breakfast">Chocolate Cake</Meal>
+            <Meal type="Lunch">Spaghetti Carbonara</Meal>
+            <Meal type="Dinner">Tomato Soup</Meal>
+        </Day>
+        
+    </MealPlan>
+</RecipeBook>
