@@ -21,25 +21,22 @@ int main() {
     }
 
     while (true) {
-        std::cout<<"\nWelcome to my lovely CookBook and your Food list for next week :333 !!\n" << std::endl;
+        std::cout << "\nWelcome to My Lovely CookBook and Your Food List for Next Week!\n";
         core.displayMainMenu();
-        int choice;
-        std::cin >> choice;
+        int choice = core.getValidatedInput();
 
         switch (choice) {
             case 1:
                 core.browseRecipesByCategory(recipeBook);
                 break;
             case 2:
-               core.mealPlanning(mealPlan, recipeBook);
+                core.mealPlanning(mealPlan, recipeBook);
                 break;
             case 3:
                 std::cout << "Exiting program.\n";
                 return 0;
             default:
                 std::cout << "Invalid choice! Try again.\n";
-                return 0;
         }
     }
-    return 0;
 }

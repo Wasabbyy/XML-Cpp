@@ -1,26 +1,26 @@
 #include "Core.h"
+#include "RecipeBook.h"
+#include "MealPlan.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include "RecipeBook.h"
-#include "MealPlan.h"
+#include <limits>
 
 void Core::displayMainMenu() {
     std::cout << "\nMain Menu:\n";
-    std::cout << "\n1. Browse Recipes by Category (Breakfast, Lunch, Dinner)\n";
-    std::cout << "\n2. Meal Planning\n";
-    std::cout << "\n3. Exit\n";
-    std::cout << "\nEnter your choice:\n ";
+    std::cout << "1. Browse Recipes by Category (Breakfast, Lunch, Dinner)\n";
+    std::cout << "2. Meal Planning\n";
+    std::cout << "3. Exit\n";
+    std::cout << "Enter your choice: ";
 }
 
 void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
     std::cout << "\nChoose a category:\n";
-    std::cout << "\n1. Breakfast\n";
-    std::cout << "\n2. Lunch\n";
-    std::cout << "\n3. Dinner\n";
-    std::cout << "\nEnter your choice:\n";
-    int choice;
-    std::cin >> choice;
+    std::cout << "1. Breakfast\n";
+    std::cout << "2. Lunch\n";
+    std::cout << "3. Dinner\n";
+    std::cout << "Enter your choice: ";
+    int choice = getValidatedInput();
 
     std::string category;
     switch (choice) {
@@ -28,11 +28,11 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         case 2: category = "Lunch"; break;
         case 3: category = "Dinner"; break;
         default:
-            std::cout << "\nInvalid choice!\n";
-            displayMainMenu();
+            std::cout << "Invalid choice!\n";
+            return;
     }
 
-    std::vector<std::string> recipes = recipeBook.getRecipesByCategory(category);
+    auto recipes = recipeBook.getRecipesByCategory(category);
     if (recipes.empty()) {
         std::cout << "No recipes found for " << category << ".\n";
         return;
@@ -43,38 +43,48 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         std::cout << i + 1 << ". " << recipes[i] << "\n";
     }
 
-    std::cout << "\nEnter the number of the recipe to view details:\n ";
-    int recipeChoice;
-    std::cin >> recipeChoice;
+    std::cout << "Enter the number of the recipe to view details: ";
+    int recipeChoice = getValidatedInput();
 
     if (recipeChoice > 0 && recipeChoice <= recipes.size()) {
         recipeBook.displayRecipeDetails(recipes[recipeChoice - 1]);
     } else {
         std::cout << "Invalid choice!\n";
-        return;
     }
 }
 
 void Core::mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook) {
-    mealPlan.displayMealPlan();
-    std::cout << "\nEnter the date to view meals (e.g., 2024-12-02):\n";
-    std::string date;
-    std::cin >> date;
+    std::vector<std::string> indexedDays;
+    mealPlan.displayMealPlan(indexedDays);
 
-    std::vector<std::string> meals = mealPlan.getMealsForDate(date);
-    if (meals.empty()) {
-        std::cout << "\nNo meals found for " << date << ".\n";
+    if (indexedDays.empty()) {
+        std::cout << "No days available in the meal plan.\n";
         return;
     }
 
-    std::cout << "\nMeals for " << date << ":\n";
+    std::cout << "\nEnter the number of a day you want to list: ";
+    int dateChoice = getValidatedInput();
+
+    if (dateChoice < 1 || dateChoice > indexedDays.size()) {
+        std::cout << "Invalid choice!\n";
+        return;
+    }
+
+    std::string selectedDate = indexedDays[dateChoice - 1];
+    auto meals = mealPlan.getMealsForDate(selectedDate);
+
+    if (meals.empty()) {
+        std::cout << "\nNo meals found for " << selectedDate << ".\n";
+        return;
+    }
+
+    std::cout << "\nMeals for " << selectedDate << ":\n";
     for (size_t i = 0; i < meals.size(); ++i) {
         std::cout << i + 1 << ". " << meals[i] << "\n";
     }
 
-    std::cout << "\nEnter the number of the meal to view details:\n ";
-    int mealChoice;
-    std::cin >> mealChoice;
+    std::cout << "\nEnter the number of the meal to view details: ";
+    int mealChoice = getValidatedInput();
 
     if (mealChoice > 0 && mealChoice <= meals.size()) {
         recipeBook.displayRecipeDetails(meals[mealChoice - 1]);
@@ -83,18 +93,17 @@ void Core::mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook) {
     }
 }
 
-int getValidatedInput() {
+int Core::getValidatedInput() {
     int value;
     while (true) {
         std::cin >> value;
         if (std::cin.fail()) {
-            std::cin.clear(); // Clear the error state
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Invalid input. Please enter a number: ";
         } else {
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard remaining input
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             return value;
         }
     }
 }
-

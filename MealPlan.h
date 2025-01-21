@@ -8,8 +8,10 @@
 class MealPlan {
 public:
     bool loadFromFile(const std::string& fileName);
-    void displayMealPlan();
+   void displayMealPlan(std::vector<std::string>& indexedDays);
+
     std::vector<std::string> getMealsForDate(const std::string& date);
+    std::vector<std::string> getDays();
 
 private:
     tinyxml2::XMLDocument doc;

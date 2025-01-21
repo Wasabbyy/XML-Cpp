@@ -17,7 +17,7 @@ std::vector<std::string> RecipeBook::getRecipesByCategory(const std::string& cat
     XMLElement* recipe = root->FirstChildElement("Recipe");
     while (recipe) {
         XMLElement* categoryElem = recipe->FirstChildElement("Category");
-        if (categoryElem && std::string(categoryElem->GetText()) == category) {
+        if (categoryElem && categoryElem->GetText() == category) {
             XMLElement* titleElem = recipe->FirstChildElement("Title");
             if (titleElem) recipes.push_back(titleElem->GetText());
         }
@@ -33,7 +33,7 @@ void RecipeBook::displayRecipeDetails(const std::string& recipeTitle) {
     XMLElement* recipe = root->FirstChildElement("Recipe");
     while (recipe) {
         XMLElement* titleElem = recipe->FirstChildElement("Title");
-        if (titleElem && std::string(titleElem->GetText()) == recipeTitle) {
+        if (titleElem && titleElem->GetText() == recipeTitle) {
             std::cout << "Recipe Details:\n";
             std::cout << "Title: " << recipeTitle << "\n";
 
@@ -60,7 +60,6 @@ void RecipeBook::displayRecipeDetails(const std::string& recipeTitle) {
                     step = step->NextSiblingElement("Step");
                 }
             }
-
             return;
         }
         recipe = recipe->NextSiblingElement("Recipe");
