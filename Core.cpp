@@ -29,7 +29,7 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         case 3: category = "Dinner"; break;
         default:
             std::cout << "\nInvalid choice!\n";
-            return;
+            displayMainMenu();
     }
 
     std::vector<std::string> recipes = recipeBook.getRecipesByCategory(category);
@@ -51,6 +51,7 @@ void Core::browseRecipesByCategory(RecipeBook& recipeBook) {
         recipeBook.displayRecipeDetails(recipes[recipeChoice - 1]);
     } else {
         std::cout << "Invalid choice!\n";
+        return;
     }
 }
 
@@ -81,3 +82,19 @@ void Core::mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook) {
         std::cout << "\nInvalid choice!\n";
     }
 }
+
+int getValidatedInput() {
+    int value;
+    while (true) {
+        std::cin >> value;
+        if (std::cin.fail()) {
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "Invalid input. Please enter a number: ";
+        } else {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard remaining input
+            return value;
+        }
+    }
+}
+

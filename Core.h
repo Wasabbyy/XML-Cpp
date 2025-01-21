@@ -10,7 +10,8 @@ class Core {
 public:
     void displayMainMenu();
     void browseRecipesByCategory(RecipeBook& recipeBook);
-    void mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook); 
+    void mealPlanning(MealPlan& mealPlan, RecipeBook& recipeBook);
+    void getValidatedInput();
 };
 
 #endif

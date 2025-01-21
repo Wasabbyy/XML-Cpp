@@ -38,6 +38,7 @@ int main() {
                 return 0;
             default:
                 std::cout << "Invalid choice! Try again.\n";
+                return 0;
         }
     }
     return 0;
